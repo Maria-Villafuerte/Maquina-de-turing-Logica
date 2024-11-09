@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-string path = "machine.txt";
+string path = "machine_data.txt";
 string[] lines = File.ReadAllLines(path);
 
 //Machine variables
@@ -43,7 +43,5 @@ for (int x = 0; x < lines.Length; x++)
 	}
 }
 
-Console.WriteLine(input);
-Console.WriteLine(blanc_symbol);
-Console.WriteLine(acceptance_state);
-Console.WriteLine(reject_state);
+Machine turing_machine = new Machine(input, states, alphabet, alphabet_pile, blanc_symbol, acceptance_state, reject_state);
+Console.WriteLine(turing_machine.input);
