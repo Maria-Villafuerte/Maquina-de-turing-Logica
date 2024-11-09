@@ -11,6 +11,8 @@ string[] alphabet_pile = [];
 string blanc_symbol = "";
 string acceptance_state = "";
 string reject_state = "";
+string initial_state = "";
+Dictionary<string, string> transitions = new Dictionary<string, string>();
 
 for (int x = 0; x < lines.Length; x++)
 {
@@ -37,11 +39,20 @@ for (int x = 0; x < lines.Length; x++)
 	{
 	    	acceptance_state = lines[x];
 	} 
-	else
+	else if (x == 6)
 	{
 		reject_state = lines[x];	    	
 	}
+	else if (x == 7)
+	{
+	    	initial_state = lines[x];
+	}
+	else
+	{
+		string[] key_value = lines[x].Split("|");
+		transitions.Add(key_value[0],key_value[1]);
+	}
 }
 
-Machine turing_machine = new Machine(input, states, alphabet, alphabet_pile, blanc_symbol, acceptance_state, reject_state);
-Console.WriteLine(turing_machine.input);
+Machine turing_machine = new Machine(input, states, alphabet, alphabet_pile, blanc_symbol, acceptance_state, reject_state, initial_state,transitions);
+turing_machine.derivation();

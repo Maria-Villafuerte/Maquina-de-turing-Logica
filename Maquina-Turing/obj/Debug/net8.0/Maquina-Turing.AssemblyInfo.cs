@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Maquina-Turing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14485027b86851cef521ae6acf6cfe61d17c6335")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c3aa154d891acd370bf9f7d4f4fbedb6d17116d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Maquina-Turing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Maquina-Turing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
