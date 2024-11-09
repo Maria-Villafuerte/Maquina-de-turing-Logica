@@ -1,4 +1,4 @@
-00
+000
 q1,q2,q3,q4,q5,qaccept,qreject
 0
 0,x,U

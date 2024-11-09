@@ -1,5 +1,3 @@
-using System.Xml.Schema;
-
 class Machine
 {
     public string input {get; set;}
@@ -41,14 +39,14 @@ class Machine
 	return input_tape;
     }
 
-	public void derivation() 
+	public bool derivation() 
 	{
 		List<string> tape = tape_initialization(input, blanc_symbol);
 		string state = initial_state;
 		int index = 2;
 		string char_tape = tape[index];
 
-		while (state != acceptances_state && state != reject_state)
+		while (!state.Equals(acceptances_state) && !state.Equals(reject_state))
 		{
 			string value = transition(state, char_tape);
 			string[] value_list = value.Split(",");
@@ -66,6 +64,13 @@ class Machine
 
 			char_tape = tape[index]; //New char to read in tape
 		}
+
+		if (state.Equals(acceptances_state))
+		{
+			return true;
+		}
+		
+		return false;
 	}
 
 	private string transition(string state, string char_tape) {
@@ -73,6 +78,25 @@ class Machine
 		string value = transitions[key];
 
 		return value;
+	}
+
+	public void generate_data()
+	{
+		var formattedTransitions = transitions.Select(kv => $"({kv.Key}) : ({kv.Value})");
+
+		string output_path = "output.txt";
+		string content = 
+		"Q: "+ states.ToString() + "\n" +
+		"Σ: " + alphabet.ToString() + "\n" +
+		"Γ: " + alphabet_pile.ToString() + "\n" +
+		"q0: " + initial_state + "\n" +
+		"Qaccept: " + acceptances_state + "\n" +
+		"Qreject: " + reject_state + "\n" +
+		"δ: \n" + "{\n" +
+		string.Join("\n", formattedTransitions) +
+		"\n}";
+
+		File.WriteAllText(output_path, content);
 	}
 
 	

@@ -55,4 +55,14 @@ for (int x = 0; x < lines.Length; x++)
 }
 
 Machine turing_machine = new Machine(input, states, alphabet, alphabet_pile, blanc_symbol, acceptance_state, reject_state, initial_state,transitions);
-turing_machine.derivation();
+bool acceptation = turing_machine.derivation();
+
+if (acceptation)
+{
+Console.WriteLine("El input fue aceptado\nGenerando la información de la Máquina de Turing...");
+turing_machine.generate_data();
+}
+else
+{
+Console.WriteLine("El input no fue aceptado\nNo se genera la información de la Máquina de Turing");
+}
