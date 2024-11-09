@@ -1,0 +1,15 @@
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/bin/Debug/net8.0/Maquina-Turing
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/bin/Debug/net8.0/Maquina-Turing.deps.json
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/bin/Debug/net8.0/Maquina-Turing.runtimeconfig.json
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/bin/Debug/net8.0/Maquina-Turing.dll
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/bin/Debug/net8.0/Maquina-Turing.pdb
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/Maquina-Turing.GeneratedMSBuildEditorConfig.editorconfig
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/Maquina-Turing.AssemblyInfoInputs.cache
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/Maquina-Turing.AssemblyInfo.cs
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/Maquina-Turing.csproj.CoreCompileInputs.cache
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/Maquina-Turing.sourcelink.json
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/Maquina-Turing.dll
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/refint/Maquina-Turing.dll
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/Maquina-Turing.pdb
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/Maquina-Turing.genruntimeconfig.cache
+/home/akice/Documentos/Repositories/Maquina-de-turing-Logica/Maquina-Turing/obj/Debug/net8.0/ref/Maquina-Turing.dll
