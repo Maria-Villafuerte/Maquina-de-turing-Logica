@@ -9,6 +9,7 @@ class Machine
     public string reject_state {get; set;}
 	public string initial_state {get; set;}
 	public Dictionary<string, string> transitions {get; set;}
+	public List<string> configurations {get; set;}
 
     public Machine(string Input, string[] States, string[] Alphabet, 
 		    string[] Alphabet_pile, string Blanc_symbol, 
@@ -23,6 +24,7 @@ class Machine
 	reject_state = Reject_state;
 	initial_state = Initial_state;
 	transitions = Transitions;
+	configurations = [];
     }
 
     private List<string> tape_initialization(string input, string blanc) 
@@ -62,15 +64,17 @@ class Machine
 				index -= 1;
 			}
 
+			save_config(string.Join(",", tape), index, state);
+
+			if (configurations.Count > 50) {
+				configurations.Add("\n*****Loop*****\n");
+				return false;
+			}
+
 			char_tape = tape[index]; //New char to read in tape
 		}
 
-		if (state.Equals(acceptances_state))
-		{
-			return true;
-		}
-		
-		return false;
+		return state.Equals(acceptances_state);
 	}
 
 	private string transition(string state, string char_tape) {
@@ -93,10 +97,20 @@ class Machine
 		"Qaccept: " + acceptances_state + "\n" +
 		"Qreject: " + reject_state + "\n" +
 		"δ: \n" + "{\n" +
-		string.Join("\n", formattedTransitions) +
-		"\n}";
+		string.Join("\n", formattedTransitions) + 
+		"\n}\n\n" +
+		"Configuraciones:\n\n" + string.Join("\n", configurations);
 
 		File.WriteAllText(output_path, content);
+	}
+
+	private void save_config(string actualTape, int index, string state)
+	{
+		string str = actualTape.Replace("[\\[\\],\\s]", "");
+		string firstHalf = str.Substring(0, index - 1);
+		string lastHalf = str.Substring(index, str.Length - index);
+
+		configurations.Add(firstHalf + state + lastHalf);
 	}
 
 	
