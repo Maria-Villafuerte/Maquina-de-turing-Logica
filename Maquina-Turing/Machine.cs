@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 class Machine
 {
     public string input {get; set;}
@@ -64,7 +66,7 @@ class Machine
 				index -= 1;
 			}
 
-			save_config(string.Join(",", tape), index, state);
+			save_config(string.Join("", tape), index, state);
 
 			if (configurations.Count > 50) {
 				configurations.Add("\n*****Loop*****\n");
@@ -90,9 +92,9 @@ class Machine
 
 		string output_path = "output.txt";
 		string content = 
-		"Q: "+ states.ToString() + "\n" +
-		"Σ: " + alphabet.ToString() + "\n" +
-		"Γ: " + alphabet_pile.ToString() + "\n" +
+		"Q: "+ string.Join(",", states) + "\n" +
+		"Σ: " + string.Join(",",alphabet) + "\n" +
+		"Γ: " + string.Join(",",alphabet_pile) + "\n" +
 		"q0: " + initial_state + "\n" +
 		"Qaccept: " + acceptances_state + "\n" +
 		"Qreject: " + reject_state + "\n" +
@@ -106,7 +108,7 @@ class Machine
 
 	private void save_config(string actualTape, int index, string state)
 	{
-		string str = actualTape.Replace("[\\[\\],\\s]", "");
+		string str = Regex.Replace(actualTape, @"[\[\],\s]", "");
 		string firstHalf = str.Substring(0, index - 1);
 		string lastHalf = str.Substring(index, str.Length - index);
 
