@@ -1,0 +1,14 @@
+00000
+qi,q2,qa,qr
+0,1
+0,1,U
+U
+qa
+qr
+qi
+qi,0|qi,0,R
+qi,1|q2,1,R
+qi,U|qa,U,L
+q2,0|q2,0,L
+q2,1|qi,1,L
+q2,U|qr,U,L
