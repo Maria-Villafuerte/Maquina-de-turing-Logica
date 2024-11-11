@@ -42,6 +42,8 @@ public class Machine {
         int index = 2;
         String charTape = tape.get(index);
 
+        saveConfig(tape.toString(), index, state);
+
         while (!state.equals(acceptanceState) && !state.equals(rejectState)) {
             String value = transition(state, charTape);
             String[] valueList = value.split(",");
@@ -93,8 +95,8 @@ public class Machine {
 
     private void saveConfig(String actualTape, int index, String state) {
         String str = actualTape.replaceAll("[\\[\\],\\s]", "");
-        String firstHalf = str.substring(0, index - 1);
-        String lastHalf = str.substring(index, str.length() - 1);
+        String firstHalf = str.substring(0, index);
+        String lastHalf = str.substring(index, str.length());
 
         configurations.add(firstHalf + state + lastHalf);
     }

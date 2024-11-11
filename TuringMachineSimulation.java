@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class TuringMachineSimulation {
     public static void main(String[] args) {
-        String path = "machine_loop.txt";
+        String path = "machine_accepted.txt";
         String input = "";
         String[] states = {};
         String[] alphabet = {};
