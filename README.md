@@ -75,10 +75,10 @@ El archivo de salida (`output.txt`) contendrá:
 
 ## Demostraciones 
 #### Cadenas que quedan en Loop:
-![alt text](<Imagen de WhatsApp 2024-11-10 a las 21.36.26_c5b02a0f.jpg>)
+![alt text](<Demo2.jpg>)
 
 #### Cadenas rechazadas:
-![alt text](<Imagen de WhatsApp 2024-11-10 a las 21.37.37_88c95ab5.jpg>)
+![alt text](<Demo1.jpg>)
 
 #### Cadenas aceptadas 
-![alt text](<Imagen de WhatsApp 2024-11-10 a las 21.38.25_3f4b2006.jpg>)
+![alt text](<Demo3.jpg>)
