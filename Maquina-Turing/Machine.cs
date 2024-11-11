@@ -86,8 +86,9 @@ class Machine
 		return value;
 	}
 
-	public void generate_data()
+	public void generate_data(bool result)
 	{
+		string results = result ? "\n\nCadena aceptada" : "\n\nCadena rechazada";
 		var formattedTransitions = transitions.Select(kv => $"({kv.Key}) : ({kv.Value})");
 
 		string output_path = "output.txt";
@@ -101,7 +102,8 @@ class Machine
 		"δ: \n" + "{\n" +
 		string.Join("\n", formattedTransitions) + 
 		"\n}\n\n" +
-		"Configuraciones:\n\n" + string.Join("\n", configurations);
+		"Configuraciones:\n\n" + string.Join("\n", configurations)
+		+ results;
 
 		File.WriteAllText(output_path, content);
 	}

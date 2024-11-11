@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-string path = "machine_data.txt";
+string path = "machine_rejected.txt";
 string[] lines = File.ReadAllLines(path);
 
 //Machine variables
@@ -60,9 +60,10 @@ bool acceptation = turing_machine.derivation();
 if (acceptation)
 {
 Console.WriteLine("El input fue aceptado\nGenerando la información de la Máquina de Turing...");
-turing_machine.generate_data();
+turing_machine.generate_data(acceptation);
 }
 else
 {
-Console.WriteLine("El input no fue aceptado\nNo se genera la información de la Máquina de Turing");
+Console.WriteLine("El input NO fue aceptado\nGenerando la información de la Máquina de Turing");
+turing_machine.generate_data(acceptation);
 }
